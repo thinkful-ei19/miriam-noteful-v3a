@@ -1,10 +1,10 @@
 language: node_js
 node_js: node
 services: mongodb
-# deploy:
-#     provider: heroku
-#     api_key:
-#       secure: [YOUR-API-KEY]
-#     app: [YOUR-APP-NAME]
-#     on:
-#       repo: [YOUR-APP-REPO]
+deploy:
+  provider: heroku
+  api_key:
+    secure: fWwHAEA9aOBKNrKYLdircZk471aMPAkM4v6kYfXOIMAz4rwwAYVXFzoTdm7nQkCwpSNO9IaxN7rel47U3+KOxLZBJDnXASvrIT6x3HQ/DEK1hCdwxlLoPD0BFUuXWvQHAaxDOVOLFxoFXEDJxpbFHviA4dVnzeocc5UASI0fr4/SGNOASulwpf6qE3Yhb6evWeVMp1YKswQZrUYMGZCAqNcGKI9manjh3u1xFyFZBWDdFftDI+n0ncmDTQYXkgyVlhsLx182Dk7DLfVqCNM5R3hHOLRW7hxH80aUXpO7JL5IiIwAP9xYJkrcPPbSWhsD23MDObzOB+5xiCrQJjL8ykMEdabk2rTHOz04kVh8Ay1UOPE0gGkxHqMpN4Bzh2aQJr7uXtqsVD9a2LO95tgaJlpY8hAdwx3D/W6V2DosNUHtRFyT51Q8qDwxG2OoTsTm5ocvxLvzsk52qTgn/N3yDOpswG5JZLRowEG/kwdOLvsrFakRJVA6ccEPsF4/792kAKEKg+Y6u0b1rUET4YfmFxRdOnvokKyoKBQwK9NllYg+5DcoMYDNX3pVGpmnaBNT2KNGFkvfTKuBLkGOAhKApIbuapKJ1Dc4mgZeyDFv+B1JoDfh4Di5lqYnNv4LyrqxmeO+4hWu3cOk16bhDa5qOFWlVlKKXldHu6aqwu5PlRw=
+  app: intense-oasis-49858
+  on:
+    repo: thinkful-ei19/miriam-noteful-v3a
