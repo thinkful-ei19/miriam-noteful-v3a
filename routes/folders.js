@@ -57,6 +57,8 @@ router.get('/folders/:id', (req, res, next) => {
 router.post('/folders', (req, res, next) => {
   const { name } = req.body;
 
+  const newfolder = { name }
+
   /***** Never trust users - validate input *****/
   if (!name) {
     const err = new Error('Missing `name` in request body');
@@ -91,16 +93,6 @@ router.put('/folders/:id', (req, res, next) => {
     return next(err);
   }
 
-  Note.deleteMany({ folderId: id })
-  .then(() => {
-    return Folder.findByIdAndRemove(id)
-  })
-  .then(() => {
-    res.status(204).end();
-  })
-  .catch(err => {
-    next(err);
-  });
 
   Folder.findByIdAndUpdate(id, { name }, { new: true })
     .then(result => {
@@ -111,6 +103,10 @@ router.put('/folders/:id', (req, res, next) => {
       }
     })
     .catch(err => {
+      if (err.code === 11000) {
+        err = new Error('The folder name already exists');
+        err.status = 400;
+      }
       next(err);
     });
 });
